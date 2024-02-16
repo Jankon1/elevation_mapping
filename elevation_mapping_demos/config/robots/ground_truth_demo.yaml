@@ -1,7 +1,8 @@
 input_sources:
   ground_truth_cloud: # A name to identify the input source
     type: pointcloud # Supported types: pointcloud
-    topic: /points
+    topic: /zed2i/zed_node/point_cloud/cloud_registered
+    #topic: /point_cloud
     queue_size: 1
     publish_on_update: true # Whether to publish the elevation map after a callback from this source.
     sensor_processor:
@@ -9,7 +10,8 @@ input_sources:
 map_frame_id: "map"
 robot_base_frame_id: "map"
 robot_pose_with_covariance_topic: ""
-track_point_frame_id: "map"
+track_point_frame_id: "zed2i_camera_center" #mapping moves with camera
+#track_point_frame_id: "map" #mapping relative to origin
 track_point_x: 0.0
 track_point_y: 0.0
 track_point_z: 0.0
